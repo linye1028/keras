@@ -39,3 +39,7 @@ x_Train_normalize=x_Train/255
 x_Test_normalize=x_Test/255
 y_TrainOneHot=np_utils.to_categorical(y_train_label)
 y_TestnOneHot=np_utils.to_categorical(y_test_label)
+
+#testing the functions
+plot_image(x_test_image[0])
+plot_image_labels_prediction(x_test_image,y_test_label,[],0,25)
