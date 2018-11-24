@@ -1,5 +1,6 @@
 #20181124
 #keras mnist预处理和图片显示函数代码
+#linye1028
 import matplotlib.pyplot as plt
 from keras.datasets import mnist
 import pandas as pd
