@@ -6,6 +6,8 @@ from keras.datasets import mnist
 from keras.models import Sequential
 from keras.layers import Dense
 import matplotlib.pyplot as plt
+
+from keras.models import load_model
 #以图形化显示训练过程
 def show_train_history(train_history,train,validation):
 	plt.plot(train_history.history[train])
@@ -55,8 +57,12 @@ show_train_history(train_history,'loss','val_loss')
 scores = model.evaluate(x_Test_normalize, y_Test_OneHot)
 print()
 print('accuracy=',scores[1])
+model.save("mnist_keras_mlp256_model.h5")
+del model
+
+model1 = load_model("mnist_keras_mlp256_model.h5")
 #testing
-prediction=model.predict_classes(x_Test)
+prediction=model1.predict_classes(x_Test)
 prediction
 #display the testdata
 plot_images_labels_prediction(x_test_image,y_test_label,prediction,idx=100,num=25)
