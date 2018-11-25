@@ -41,7 +41,7 @@ x_Train =x_train_image.reshape(60000, 784).astype('float32')
 x_Test = x_test_image.reshape(10000, 784).astype('float32')
 x_Train_normalize = x_Train / 255
 x_Test_normalize = x_Test / 255
-y_Train_OneHot = np_utils.to_categorical(y_train_label)
+y_Train_OneHot = np_utils.to_categorical(y_train_label) 
 y_Test_OneHot = np_utils.to_categorical(y_test_label)
 
 model = Sequential()
@@ -57,10 +57,10 @@ show_train_history(train_history,'loss','val_loss')
 scores = model.evaluate(x_Test_normalize, y_Test_OneHot)
 print()
 print('accuracy=',scores[1])
-model.save("mnist_keras_mlp256_model.h5")
-del model
+model.save("mnist_keras_mlp256_model.h5") #保存模型
+del model #删除原模型
 
-model1 = load_model("mnist_keras_mlp256_model.h5")
+model1 = load_model("mnist_keras_mlp256_model.h5") #加载模型
 #testing
 prediction=model1.predict_classes(x_Test)
 prediction
