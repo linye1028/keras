@@ -1,3 +1,5 @@
+#用CNN训练和预测MNIST
+#20181125 linye
 #数据预处理用
 from keras.datasets import mnist
 from keras.utils import np_utils
